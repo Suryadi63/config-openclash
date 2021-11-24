@@ -1,0 +1,51 @@
+payload: 
+  - DOMAIN-SUFFIX,local
+  - IP-CIDR,127.0.0.0/8
+  - IP-CIDR,172.16.0.0/12
+  - IP-CIDR,192.168.0.0/16
+  - IP-CIDR,10.0.0.0/8
+  - IP-CIDR,17.0.0.0/8
+  - IP-CIDR,100.64.0.0/10
+  - IP-CIDR6,fe80::/10
+ 
+ # > MOBILE LEGENDS BANG BANG
+  - IP-CIDR,104.64.0.0/10
+
+  # > FREE FIRE AOV
+  - IP-CIDR,122.11.128.0/17
+
+  # > PUBG MOBILE
+  - IP-CIDR,99.85.128.0/17
+  - IP-CIDR,99.86.0.0/16
+  - IP-CIDR,99.87.0.0/17
+  - IP-CIDR,99.87.128.0/18
+
+  # > call of duty
+  - IP-CIDR,104.64.0.0/10
+
+  # > clash of clan
+  - IP-CIDR,172.98.192.32/29
+
+  # > clash royale
+  - IP-CIDR,99.85.128.0/17
+  - IP-CIDR,99.86.0.0/16
+  - IP-CIDR,99.87.0.0/17
+  - IP-CIDR,99.87.128.0/18
+
+  # > roblox
+  - IP-CIDR,128.116.0.0/17
+
+  # > among us
+  - IP-CIDR,3.0.0.0/9
+
+  # > rf online
+  - IP-CIDR,202.93.16.0/21
+
+  # > dragon nest
+  - IP-CIDR,20.192.0.0/10
+
+  # > valorant
+  - IP-CIDR,2.17.196.0/22
+
+  # > growtopia
+  - IP-CIDR,3.128.0.0/9
