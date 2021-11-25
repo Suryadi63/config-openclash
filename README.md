@@ -8,4 +8,3 @@
  Url-test = otomatis mengganti ke akun dengan lattency (ping) terkecil.
  Manual = bisa ganti sendiri akun
  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- Contoh formah akun di openclash ada di file README.yaml
