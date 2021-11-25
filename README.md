@@ -1,3 +1,6 @@
+# NOTE : !! CONTOH FORMAT AKUN ADA DI FOLDER PROXY-PROVIDER !!
+
+
 # config-openclash
  Cara pengisian akun :
  
