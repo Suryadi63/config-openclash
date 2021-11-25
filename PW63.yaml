@@ -1,19 +1,19 @@
 ---
 proxy-providers:
-  balance:
+  akun:
     type: file
-    path: "./proxy_provider/balance.yaml"
+    path: "./proxy_provider/akun.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 100
 proxy-groups:
-- name: balance
+- name: akun
   type: load-balance
   strategy: consistent-hashing
   disable-udp: false
   use:
-  - balance
+  - akun
   url: http://www.gstatic.com/generate_204
   interval: '99'
 redir-port: 7892
@@ -155,11 +155,11 @@ profile:
   store-selected: true
   store-fakeip: true
 rules:
-- RULE-SET,balance,balance
+- RULE-SET,akun,akun
 - RULE-SET,Direct,DIRECT
 - RULE-SET,Reject,REJECT
-- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-- MATCH,GLOBAL
+- IP-CIDR,198.18.0.1/16,REJECT
+- MATCH,akun
 rule-providers:
   Reject:
     type: file
@@ -169,7 +169,7 @@ rule-providers:
     type: file
     behavior: classical
     path: "./rule_provider/direct.yaml"
-  balance:
+  akun:
     type: file
     behavior: classical
-    path: "./rule_provider/balance.yaml"
+    path: "./rule_provider/akun.yaml"
