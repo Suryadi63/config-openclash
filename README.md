@@ -11,7 +11,7 @@
  Contoh formah akun di openclash
  
 # TROJAN 
- - name: nama akun
+- name: nama akun
   type: trojan
   server: alamat host atau ip
   port: 443
@@ -19,7 +19,6 @@
   udp: true
   sni: isibug.com
   skip-cert-verify: true
-
 # VMESS 
 - name: nama akun
   type: vmess
@@ -36,8 +35,7 @@
   ws-path: Namassh
   ws-headers:
     Host: isibug.com
-    
- # SHADOWSOCK
+# SHADOWSOCK
  - name: Nama akun
   type: ss
   server: alaman ip/host akun
