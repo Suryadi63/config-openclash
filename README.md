@@ -10,7 +10,7 @@
  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  Contoh formah akun di openclash
  
-## TROJAN 
+# TROJAN 
  - name: nama akun
   type: trojan
   server: alamat host atau ip
@@ -20,7 +20,7 @@
   sni: isibug.com
   skip-cert-verify: true
 
-## VMESS 
+# VMESS 
 - name: nama akun
   type: vmess
   server: alamat host atau ip
@@ -37,7 +37,7 @@
   ws-headers:
     Host: isibug.com
     
- ## SHADOWSOCK
+ # SHADOWSOCK
  - name: Nama akun
   type: ss
   server: alaman ip/host akun
