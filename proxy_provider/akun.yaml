@@ -1,5 +1,5 @@
 proxies:
-- - name: nama akun
+- name: nama akun
   type: trojan
   server: alamat host atau ip
   port: 443
