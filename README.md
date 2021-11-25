@@ -8,3 +8,7 @@
  Url-test = otomatis mengganti ke akun dengan lattency (ping) terkecil.
  Manual = bisa ganti sendiri akun
  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Cara Download 
+1. bisa pake git clone https://github.com/Suryadi63/config-openclash.git
+2. bisa download zipnya ![Screenshot (22)](https://user-images.githubusercontent.com/60930566/143377888-874fbf36-accd-4e93-ac31-3e8fbd8c7df3.png)
