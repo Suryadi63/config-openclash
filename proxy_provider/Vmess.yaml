@@ -1,0 +1,16 @@
+# VMESS 
+- name: nama akun
+  type: vmess
+  server: alamat host atau ip
+  port: 443
+  uuid: password-uuid
+  alterId: 32
+  cipher: insert-cipher
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: isibug.com
+  network: ws
+  ws-path: Path dari vpn
+  ws-headers:
+    Host: isibug.com
