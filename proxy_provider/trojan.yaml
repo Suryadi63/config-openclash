@@ -1,9 +1,0 @@
-# TROJAN 
-- name: nama akun
-  type: trojan
-  server: alamat host atau ip
-  port: 443
-  password: password-uuid
-  udp: true
-  sni: isibug.com
-  skip-cert-verify: true
