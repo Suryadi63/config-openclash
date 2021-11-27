@@ -1,17 +1,14 @@
 # NOTE : !! CONTOH FORMAT AKUN ADA DI FOLDER PROXY-PROVIDER !!
 
 ****************************************************************************************************************************************************
+# Cara pemasangan
 
-# Cara Download
+ # 1. Config manage =>> choose file =>> pilih file yang di download![Screenshot (63)](https://user-images.githubusercontent.com/60930566/143690750-9385d460-3509-402e-873c-53cfd6b54057.png)
+ # 2. Config editor =>> Hapus folder proxy-provider dan Rule Provider![Screenshot (65)](https://user-images.githubusercontent.com/60930566/143690909-c991a0f0-f3fa-4c5b-a47a-443cc0790160.png)
 
- #  1. Klik realease =>> ![Screenshot (49)](https://user-images.githubusercontent.com/60930566/143540055-139ee010-1606-4871-be8d-421da7bb00fc.png) 
- #  2. Lalu klik =>> ![Screenshot (50)](https://user-images.githubusercontent.com/60930566/143540364-13a88825-aab9-4fda-83cb-36741f8dc255.png)
-*****************************************************************************************************************************************************
-# Cara Restore atau pemasangan
- # 1. Klik config manage =>> ![Screenshot (55)](https://user-images.githubusercontent.com/60930566/143541196-536cf0f8-8c90-46e4-91dd-ee92e83b7838.png)
- # 2. Di upload file type pilih (backup file) =>> ![Screenshot (56)](https://user-images.githubusercontent.com/60930566/143541358-bdac2edf-85fe-4cf7-8a5f-764e3dbb9358.png)
- # 3. Jika berhasil akan ada config baru PW63 =>> ![Screenshot (57)](https://user-images.githubusercontent.com/60930566/143541549-27a6e1c6-4d6c-4c12-943b-d26e360557cb.png)
- # 4. Langkah terakhir klik apply =>> ![Screenshot (58)](https://user-images.githubusercontent.com/60930566/143541663-3ada8884-c055-4281-8058-35dff089102f.png)
+ # 3. Klick Upload =>> Lalu Upload folder yang sudah di download![Screenshot (67)](https://user-images.githubusercontent.com/60930566/143690992-b4c32c4a-6aa8-4f21-832b-d15292329163.png)
+
+
 *******************************************************************************************************************************************************
  # Cara pengisian akun :
  
@@ -31,6 +28,6 @@
   # NOTE :  Url-test = otomatis mengganti ke akun dengan lattency (ping) terkecil.
   #         Manual = bisa ganti sendiri akun
 ***********************************************************************************************************
-# Source rule https://github.com/MasterWifiNetworkSolution/openclash
+# Sumber rule https://github.com/MasterWifiNetworkSolution/openclash
 # Thanks for OpenWrt Mod Indonesia dan mbah mbah sekalian.
 
