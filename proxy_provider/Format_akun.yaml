@@ -1,0 +1,133 @@
+proxies:
+- name: "http"
+  type: http
+  server: domain.anda.com
+  port: 443
+  username: masterwifi
+  password: masterwifi
+  tls: isikan true atau https
+  skip-cert-verify: true
+  sni: bug.com
+------------------------------------------------------
+- name: "shadowsocks"
+  type: ss
+  server: [bug].server.sshanda.com
+  port: 14000
+  cipher: aes-256-gcm
+  password: masterwifi
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: tls
+    host: bug.com
+-----------------------------------------------------
+- name: "shadowsocksr"
+  type: ssr
+  server: 123.123.123.123
+  port: 443
+  cipher: aes-256-cfb
+  password: shadowmaster
+  obfs: plain
+  protocol: origin
+  obfs-param: isikan param
+  protocol-param: isikan protocol
+  udp: true
+---------------------------------------------------------
+- name: "snell"
+  type: snell
+  server: id2.trojan.bonds.id
+  port: 44046
+  psk: masterwifi
+  version: 2
+  obfs-opts:
+  mode: http # or tls
+  host: bug.com
+-------------------------------------------------------------
+- name: "socks"
+  type: socks5
+  server: 123.123.123.123
+  port: 443
+  tls: true, 
+  skip-cert-verify: true
+----------------------------------------------------------------
+- name: "trojan"
+  type: trojan
+  server: sg2.trojan.bonds.id
+  port: 443
+  password: masterwifi
+  udp: true
+  sni: bug.com
+  skip-cert-verify: true
+----------------------------------------------------------------
+- name: trojan-grpc
+  type: trojan
+  server: 123.123.123.123
+  port: 443
+  password: 555x-235hd-snd45-sddk2-dde4
+  network: grpc
+  sni: bug.com
+  skip-cert-verify: true
+  udp: true
+  grpc-opts:
+    grpc-service-name: howdy.id
+-----------------------------------------------------------------------
+- name: vless-tls
+  type: vless
+  server: alamat host/ip vpn
+  Port: 443
+  uuid: password-uuid
+  alterId: 32
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: bug.com
+  network: ws
+  ws-path: /v2ray
+  ws-headers:
+    host: bug.com
+--------------------------------------------------------------------
+- name: vmess-grpc
+  type: vmess
+  server: v2ray.sshanda.com
+  port: 443
+  uuid: xxxx.xxxx.xxxx.xxxx
+  alterId: 32
+  cipher: auto
+  network: grpc
+  tls: true
+  servername: bug.com
+  skip-cert-verify: true
+  grpc-opts:
+    grpc-service-name: bug.com
+-------------------------------------------------------------------
+- name: vmess-tls
+  type: vmess
+  server: Alamat server vpn
+  port: 443
+  uuid: xxxx.xxxx.xxxx.xxxx
+  alterId: 32
+  cipher: aes-256-gcm
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: bug.com
+  network: ws
+  ws-path: /v2ray
+  ws-headers:
+    Host: bug.com
+----------------------------------------------------------------------
+- name: "vmess-ws"
+  type: vmess
+  server: v2ray.sshanda.com
+  port: 443
+  uuid: xxxx.xxxx.xxxx.xxxx
+  alterId: 64
+  cipher: auto
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: bug.com
+  network: ws
+  ws-path: /v2ray
+  ws-headers:
+    Host: bug.com
