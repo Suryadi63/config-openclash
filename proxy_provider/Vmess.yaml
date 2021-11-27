@@ -1,16 +1,31 @@
-# VMESS 
-- name: nama akun
+proxies:
+- name: v2rayid
   type: vmess
-  server: alamat host atau ip
+  server: id5.v2rayserv.com
   port: 443
-  uuid: password-uuid
-  alterId: 32
-  cipher: insert-cipher
+  uuid: aa11ee26-9d95-4375-857e-a4d7f2fee6d6
+  alterId: 64
+  cipher: auto
   udp: true
   skip-cert-verify: true
   tls: true
-  servername: isibug.com
+  servername: m.starmakerstudios.com
   network: ws
-  ws-path: Path dari vpn
+  ws-path: /sshocean
   ws-headers:
-    Host: isibug.com
+    Host: m.starmakerstudios.com
+- name: v2rayid-1
+  type: vmess
+  server: id5.v2rayserv.com
+  port: 443
+  uuid: aa11ee26-9d95-4375-857e-a4d7f2fee6d6
+  alterId: 64
+  cipher: auto
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: m.starmakerstudios.com
+  network: ws
+  ws-path: /sshocean
+  ws-headers:
+    Host: m.starmakerstudios.com

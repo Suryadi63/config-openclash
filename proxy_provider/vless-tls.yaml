@@ -1,0 +1,15 @@
+proxies:
+- name: Nama akun
+  type: vless
+  server: alamat host/ip vpn
+  Port: 443
+  uuid: password-uuid
+  alterId: 32
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: isibug.com
+  network: ws
+  ws-path: /v2ray
+  ws-headers:
+    host: isibug.com

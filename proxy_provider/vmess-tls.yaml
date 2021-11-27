@@ -1,0 +1,16 @@
+proxies:
+- name: Nama akun
+  type: vmess
+  server: Alamat server vpn
+  port: 443
+  uuid: xxxx.xxxx.xxxx.xxxx
+  alterId: 32
+  cipher: aes-256-gcm
+  udp: true
+  skip-cert-verify: true
+  tls: true
+  servername: Isibug.com
+  network: ws
+  ws-path: /v2ray
+  ws-headers:
+    Host: Isibug.com

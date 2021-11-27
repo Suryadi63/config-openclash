@@ -1,9 +1,17 @@
 proxies:
-- name: nama akun
+- name: HE
   type: trojan
-  server: alamat host atau ip
+  server: sg1-trojan.bonds.id
   port: 443
-  password: password-uuid
+  password: 724b2560-4eb7-11ec-91dd-1239d0255272
   udp: true
-  sni: isibug.com
+  sni: m.starmakerstudios.com
+  skip-cert-verify: true
+- name: Biznet-B
+  type: trojan
+  server: id5-trojan.bonds.id
+  port: 443
+  password: 9c851a00-4eda-11ec-8506-1239d0255272
+  udp: true
+  sni: m.starmakerstudios.com
   skip-cert-verify: true

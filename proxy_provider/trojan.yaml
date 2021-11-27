@@ -1,9 +1,9 @@
-# TROJAN 
-- name: nama akun
+proxies:
+- name: "trojan"
   type: trojan
-  server: alamat host atau ip
+  server: sg2.trojan.bonds.id
   port: 443
-  password: password-uuid
+  password: masterwifi
   udp: true
-  sni: isibug.com
+  sni: bing.com
   skip-cert-verify: true
