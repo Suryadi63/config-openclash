@@ -231,16 +231,16 @@ script:
             "Facebook": "akun",
             "Garena": "DIRECT",
             "Iklan": "REJECT",
-            "Instagram": "DIRECT",
+            "Instagram": "akun",
             "LAN": "DIRECT",
             "Langitmusik": "DIRECT",
             "Mobilegends": "DIRECT",
             "Onlineshop": "akun",
             "Pubg": "akun",
             "Porn": "REJECT",
-            "Soundcloud": "DIRECT",
+            "Soundcloud": "akun",
             "Tiktok": "akun",
-            "Whatsapp": "DIRECT",
+            "Whatsapp": "akun",
             "Youtube": "DIRECT"
           }
 
@@ -280,16 +280,16 @@ rules:
 - RULE-SET,Facebook,akun
 - RULE-SET,Garena,DIRECT
 - RULE-SET,Iklan,REJECT
-- RULE-SET,Instagram,DIRECT
+- RULE-SET,Instagram,akun
 - RULE-SET,LAN,DIRECT
 - RULE-SET,Langitmusik,DIRECT
 - RULE-SET,Mobilegends,DIRECT
 - RULE-SET,Onlineshop,akun
 - RULE-SET,Pubg,akun
 - RULE-SET,Porn,REJECT
-- RULE-SET,Soundcloud,DIRECT
-- RULE-SET,Tiktok,DIRECT
-- RULE-SET,Whatsapp,DIRECT
+- RULE-SET,Soundcloud,akun
+- RULE-SET,Tiktok,akun
+- RULE-SET,Whatsapp,akun
 - RULE-SET,Youtube,DIRECT
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
 - GEOIP,CN,DIRECT
