@@ -6,136 +6,16 @@ proxy-providers:
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
-      interval: 100
+      interval: 50
 proxy-groups:
-- name: akun
+- name: Akun
   type: load-balance
   strategy: consistent-hashing
   disable-udp: false
   use:
   - akun
   url: http://www.gstatic.com/generate_204
-  interval: '99'
-rule-providers:
-  Arenaofvalor:
-    type: file
-    behavior: classical
-    path: "./rule_provider/arenaofvalor.yaml"
-  Browser:
-    type: file
-    behavior: classical
-    path: "./rule_provider/browser.yaml"
-  Deezer:
-    type: file
-    behavior: classical
-    path: "./rule_provider/deezer.yaml"
-  Facebook:
-    type: file
-    behavior: classical
-    path: "./rule_provider/facebook.yaml"
-  Garena:
-    type: file
-    behavior: classical
-    path: "./rule_provider/garena.yaml"
-  Iklan:
-    type: file
-    behavior: classical
-    path: "./rule_provider/iklan.yaml"
-  Instagram:
-    type: file
-    behavior: classical
-    path: "./rule_provider/instagram.yaml"
-  LAN:
-    type: file
-    behavior: classical
-    path: "./rule_provider/LAN.yaml"
-  Langitmusik:
-    type: file
-    behavior: classical
-    path: "./rule_provider/langitmusik.yaml"
-  Mobilegends:
-    type: file
-    behavior: classical
-    path: "./rule_provider/ml.yaml"
-  Onlineshop:
-    type: file
-    behavior: classical
-    path: "./rule_provider/onlineshop.yaml"
-  Pubg:
-    type: file
-    behavior: classical
-    path: "./rule_provider/pubg.yaml"
-  Porn:
-    type: file
-    behavior: classical
-    path: "./rule_provider/porn.yaml"
-  Soundcloud:
-    type: file
-    behavior: classical
-    path: "./rule_provider/soundcloud.yaml"
-  Tiktok:
-    type: file
-    behavior: classical
-    path: "./rule_provider/tiktok.yaml"
-  Whatsapp:
-    type: file
-    behavior: classical
-    path: "./rule_provider/whatsapp.yaml"
-  Youtube:
-    type: file
-    behavior: classical
-    path: "./rule_provider/youtube.yaml"
-script:
-  code: |
-    def main(ctx, metadata):
-        ruleset_action = {"Arenaofvalor": "DIRECT",
-            "Browser": "akun",
-            "Deezer": "DIRECT",
-            "Facebook": "akun",
-            "Garena": "DIRECT",
-            "Iklan": "REJECT",
-            "Instagram": "akun",
-            "LAN": "DIRECT",
-            "Langitmusik": "DIRECT",
-            "Mobilegends": "DIRECT",
-            "Onlineshop": "akun",
-            "Pubg": "akun",
-            "Porn": "REJECT",
-            "Soundcloud": "akun",
-            "Tiktok": "akun",
-            "Whatsapp": "akun",
-            "Youtube": "akun"
-          }
-
-        port = int(metadata["dst_port"])
-
-        if metadata["network"] == "UDP":
-            if port == "443,3478,4244,5222,5223,5228,5288,5242,5349,17000,20030,20031,34784,45395,50318,59234":
-                ctx.log('[Script] matched QUIC traffic use browser')
-                return "akun"
-
-        if metadata["dst_ip"] == "":
-            metadata["dst_ip"] = ctx.resolve_ip(metadata["host"])
-
-        port_list = [21, 22, 23, 53, 80, 123, 143, 194, 443, 465, 587, 853, 993, 995, 998, 2052, 2053, 2082, 2083, 2086, 2095, 2096, 5222, 5223, 5228, 5229, 5230, 5242, 8080, 8443, 8880, 8888, 8889, 17000, 20030, 20031, 20443, 49152, 50318, 50473, 50458, 50460, 50457, 50432, 50455, 50471, 50473, 50456, 59234]
-        if port not in port_list:
-            ctx.log('[Script] not common port use direct')
-            return "DIRECT"
-
-        if metadata["dst_ip"] == "":
-            return "DIRECT"
-
-        for ruleset in ruleset_action:
-            if ctx.rule_providers[ruleset].match(metadata):
-                return ruleset_action[ruleset]
-
-        code = ctx.geoip(metadata["dst_ip"])
-        if code == "CN":
-            ctx.log('[Script] Geoip CN')
-            return "DIRECT"
-
-        ctx.log('[Script] FINAL')
-        return "akun"
+  interval: '50'
 redir-port: 7892
 tproxy-port: 7895
 port: 7890
@@ -145,7 +25,7 @@ mode: rule
 log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
-secret: PW63
+secret: 12345
 bind-address: "*"
 external-ui: "/usr/share/openclash/dashboard"
 dns:
@@ -154,28 +34,25 @@ dns:
   enhanced-mode: redir-host
   listen: 127.0.0.1:7874
   default-nameserver:
+  - 192.168.8.1
+  - 192.168.0.1
   - 114.114.114.114
   - 119.29.29.29
-  - 8.8.8.8
-  - 8.8.4.4
-  - 1.1.1.1
-  - 1.0.0.1
   nameserver:
+  - 192.168.8.1
+  - 192.168.0.1
+  - dhcp://"eth1"
+  - dhcp://"eth2"
   - 114.114.114.114
   - 119.29.29.29
-  - 8.8.8.8
-  - 8.8.4.4
-  - 1.1.1.1
-  - 1.0.0.1
   fallback:
-  - https://cloudflare-dns.com/dns-query
-  - https://dns.google/dns-query
+  - https://dns.cloudflare.com/dns-query
+  - https://dns.rubyfish.cn/dns-query
   - https://1.1.1.1/dns-query
   - tls://8.8.8.8:853
-  - tls://dns.rubyfish.cn:853
-  - https://1.1.1.1/dns-query
   fallback-filter:
     geoip: true
+    geoip-code: CN
     ipcidr:
     - 0.0.0.0/8
     - 10.0.0.0/8
@@ -198,35 +75,30 @@ dns:
     - "+.facebook.com"
     - "+.youtube.com"
     - "+.githubusercontent.com"
+    - "+.googlevideo.com"
 ipv6: false
-tun:
-  enable: true
 profile:
   store-selected: true
-  store-fakeip: false
-  macOS-auto-route: true
-  macOS-auto-detect-interface: true
+  store-fake-ip: true
+rules:
+- RULE-SET,Direct,DIRECT
+- RULE-SET,Reject,REJECT
+- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+- MATCH,Akun
+rule-providers:
+  Reject:
+    type: file
+    behavior: classical
+    path: "./rule_provider/reject.yaml"
+  Direct:
+    type: file
+    behavior: classical
+    path: "./rule_provider/direct.yaml"
+tun:
+  enable: true
+  stack: system
   dns-hijack:
   - tcp://8.8.8.8:53
   - tcp://8.8.4.4:53
-rules:
-- RULE-SET,Arenaofvalor,DIRECT
-- RULE-SET,Browser,akun
-- RULE-SET,Deezer,DIRECT
-- RULE-SET,Facebook,akun
-- RULE-SET,Garena,DIRECT
-- RULE-SET,Iklan,REJECT
-- RULE-SET,Instagram,akun
-- RULE-SET,LAN,DIRECT
-- RULE-SET,Langitmusik,DIRECT
-- RULE-SET,Mobilegends,DIRECT
-- RULE-SET,Onlineshop,akun
-- RULE-SET,Pubg,akun
-- RULE-SET,Porn,REJECT
-- RULE-SET,Soundcloud,akun
-- RULE-SET,Tiktok,akun
-- RULE-SET,Whatsapp,akun
-- RULE-SET,Youtube,akun
-- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
-- GEOIP,CN,DIRECT
-- MATCH,akun
+experimental:
+  interface-name: br-lan
