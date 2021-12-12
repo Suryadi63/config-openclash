@@ -1,7 +1,0 @@
-payload: 
-  # > MOBILE LEGENDS MASTER WIFI NETWORK SOLUTION
-  - DOMAIN-SUFFIX,www.mobilelegends.com
-  - DOMAIN-SUFFIX,api.mobilelegends.com
-  - DOMAIN-SUFFIX,static.mobilelegends.com
-  - DOMAIN-SUFFIX,play.mobilelegends.com
-  - DOMAIN-SUFFIX,m.mobilelegends.com
