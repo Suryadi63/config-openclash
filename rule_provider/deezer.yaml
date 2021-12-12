@@ -1,9 +1,0 @@
-payload:
-  # > DEEZER
-  - DOMAIN-SUFFIX,www.deezer.com
-  - DOMAIN-SUFFIX,live.deezer.com
-  - DOMAIN-SUFFIX,api.deezer.com
-  - DOMAIN-SUFFIX,deezer.page.link
-  - DOMAIN-SUFFIX,media.deezer.com
-  - DOMAIN-SUFFIX,messaging.deezer.com
-  - DOMAIN-SUFFIX,rec.deezer.com
