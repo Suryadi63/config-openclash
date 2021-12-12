@@ -1,1 +1,9 @@
 proxies:
+- name: "Isi-akun"
+  type: trojan
+  server: sg2.trojan.bonds.id
+  port: 443
+  password: uuid
+  udp: true
+  sni: bug.com
+  skip-cert-verify: true
