@@ -86,11 +86,11 @@ rules:
 - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
 - MATCH,Akun
 rule-providers:
-  Reject:
+  Block:
     type: file
     behavior: classical
     path: "./rule_provider/Block.yaml"
-  Direct:
+  LAN:
     type: file
     behavior: classical
     path: "./rule_provider/LAN.yaml"

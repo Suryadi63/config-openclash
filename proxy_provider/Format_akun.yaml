@@ -73,9 +73,9 @@ proxies:
 -----------------------------------------------------------------------
 - name: vless-tls
   type: vless
-  server: alamat host/ip vpn
+  server: sg.vmess6.xservs.xyz
   Port: 443
-  uuid: password-uuid
+  uuid: b0284158-e75f-46a0-bd8a-
   alterId: 32
   udp: true
   skip-cert-verify: true
@@ -102,32 +102,32 @@ proxies:
 -------------------------------------------------------------------
 - name: vmess-tls
   type: vmess
-  server: Alamat server vpn
+  server: sg.vmess6.xservs.xyz
   port: 443
-  uuid: xxxx.xxxx.xxxx.xxxx
-  alterId: 32
+  uuid: b0284158-e75f-46a0-bd8a-c5c7e23882c9
+  alterId: 64
   cipher: aes-256-gcm
   udp: true
   skip-cert-verify: true
   tls: true
-  servername: bug.com
+  servername: ap2i-t3.musical.ly
   network: ws
-  ws-path: /v2ray
+  ws-path: /sshstores
   ws-headers:
-    Host: bug.com
+    Host: ap2i-t3.musical.ly
 ----------------------------------------------------------------------
 - name: "vmess-ws"
   type: vmess
-  server: v2ray.sshanda.com
+  server: sg.vmess6.xservs.xy
   port: 443
-  uuid: xxxx.xxxx.xxxx.xxxx
+  uuid: b0284158-e75f-46a0-bd8a-c5c7e23882c9
   alterId: 64
   cipher: auto
   udp: true
   skip-cert-verify: true
   tls: true
-  servername: bug.com
+  servername: ap2i-t3.musical.ly
   network: ws
-  ws-path: /v2ray
+  ws-path: /sshstores
   ws-headers:
-    Host: bug.com
+    Host: ap2i-t3.musical.ly
