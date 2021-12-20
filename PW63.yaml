@@ -9,8 +9,7 @@ proxy-providers:
       interval: 50
 proxy-groups:
 - name: Akun
-  type: load-balance
-  strategy: consistent-hashing
+  type: select
   disable-udp: false
   use:
   - akun
@@ -83,7 +82,6 @@ profile:
 rules:
 - RULE-SET,LAN,DIRECT
 - RULE-SET,Block,REJECT
-- IP-CIDR,198.18.0.1/16,REJECT,no-resolve
 - MATCH,Akun
 rule-providers:
   Block:
