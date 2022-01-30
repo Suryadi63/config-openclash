@@ -1,5 +1,5 @@
 # NOTE : !! CONTOH FORMAT AKUN ADA DI FOLDER PROXY-PROVIDER !!
-# eth1.yaml salin dan paste  di proxy-provider lalu hasil salinan ganti jadi usb0.yaml
+
 ****************************************************************************************************************************************************
 # Cara pemasangan
 
