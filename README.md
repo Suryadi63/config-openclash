@@ -1,5 +1,5 @@
 # NOTE : !! CONTOH FORMAT AKUN ADA DI FOLDER PROXY-PROVIDER !!
-
+# eth1.yaml salin dan paste  di proxy-provider lalu hasil salinan ganti jadi usb0.yaml
 ****************************************************************************************************************************************************
 # Cara pemasangan
 
@@ -28,6 +28,5 @@
   # NOTE :  Url-test = otomatis mengganti ke akun dengan lattency (ping) terkecil.
   #         Manual = bisa ganti sendiri akun
 ***********************************************************************************************************
-# Sumber rule https://github.com/MasterWifiNetworkSolution/openclash
-# Thanks for OpenWrt Mod Indonesia dan mbah mbah sekalian.
+
 
