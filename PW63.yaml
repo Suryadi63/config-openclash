@@ -1,102 +1,76 @@
 ---
-proxy-providers:
-  akun:
-    type: file
-    path: "./proxy_provider/akun.yaml"
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 50
-proxy-groups:
-- name: Akun
-  type: select
-  disable-udp: false
-  use:
-  - akun
-  url: http://www.gstatic.com/generate_204
-  interval: '50'
-redir-port: 7892
-tproxy-port: 7895
 port: 7890
 socks-port: 7891
+redir-port: 7892
 mixed-port: 7893
-mode: rule
+mode: global
 log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
-secret: 12345
 bind-address: "*"
-external-ui: "/usr/share/openclash/dashboard"
+ipv6: false
 dns:
   enable: true
   ipv6: false
   enhanced-mode: redir-host
   listen: 127.0.0.1:7874
-  default-nameserver:
-  - 192.168.8.1
-  - 192.168.0.1
-  - 114.114.114.114
-  - 119.29.29.29
+  fallback-filter:
+    geoip: false
+    ipcidr:
+    - 240.0.0.0/4
   nameserver:
   - 192.168.8.1
-  - 192.168.0.1
+  - 192.168.42.129
   - dhcp://"eth1"
-  - dhcp://"eth2"
+  - dhcp://"usb0"
+  fallback:
+  - tcp://1.1.1.1
+  - tcp://8.8.8.8
+  - 1.1.1.1
+  - 8.8.8.8
+  default-nameserver:
+  - 1.1.1.1
+  - 8.8.8.8
+  - 192.168.42.129
   - 114.114.114.114
   - 119.29.29.29
-  fallback:
-  - https://dns.cloudflare.com/dns-query
-  - https://dns.rubyfish.cn/dns-query
-  - https://1.1.1.1/dns-query
-  - tls://8.8.8.8:853
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    ipcidr:
-    - 0.0.0.0/8
-    - 10.0.0.0/8
-    - 100.64.0.0/10
-    - 127.0.0.0/8
-    - 169.254.0.0/16
-    - 172.16.0.0/12
-    - 192.0.0.0/24
-    - 192.0.2.0/24
-    - 192.88.99.0/24
-    - 192.168.0.0/16
-    - 198.18.0.0/15
-    - 198.51.100.0/24
-    - 203.0.113.0/24
-    - 224.0.0.0/4
-    - 240.0.0.0/4
-    - 255.255.255.255/32
-    domain:
-    - "+.google.com"
-    - "+.facebook.com"
-    - "+.youtube.com"
-    - "+.githubusercontent.com"
-    - "+.googlevideo.com"
-ipv6: false
-profile:
-  store-selected: true
-  store-fake-ip: true
-rules:
-- RULE-SET,LAN,DIRECT
-- RULE-SET,Block,REJECT
-- MATCH,Akun
-rule-providers:
-  Block:
-    type: file
-    behavior: classical
-    path: "./rule_provider/Block.yaml"
-  LAN:
-    type: file
-    behavior: classical
-    path: "./rule_provider/LAN.yaml"
-tun:
-  enable: true
-  stack: system
-  dns-hijack:
-  - tcp://8.8.8.8:53
-  - tcp://8.8.4.4:53
+  - 192.168.8.1
 experimental:
-  interface-name: br-lan
+  interface-name: en0
+proxy-groups:
+- name: eth1
+  type: select
+  use:
+  - eth1
+  interface-name: eth1
+- name: usb0
+  type: select
+  use:
+  - usb0
+  interface-name: usb0
+- name: LB
+  type: load-balance
+  strategy: consistent-hashing
+  disable-udp: true
+  proxies:
+  - eth1
+  - usb0
+  url: http://www.gstatic.com/generate_204
+  interval: '300'
+rules:
+- MATCH,LB
+proxy-providers:
+  eth1:
+    type: file
+    path: "./proxy_provider/eth1.yaml"
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  usb0:
+    type: file
+    path: "./proxy_provider/usb0.yaml"
+    health-check:
+      enable: false
+      url: http://www.gstatic.com/generate_204
+      interval: 300
