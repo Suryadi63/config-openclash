@@ -1,0 +1,64 @@
+---
+proxies:
+- name: wwan0
+  type: trojan
+  server: trojan-contabo1.bypass.id
+  port: 443
+  password: ****
+  udp: true
+  sni: 
+  skip-cert-verify: true
+  interface-name: wwan0
+- name: usb0
+  type: trojan
+  server: trojan-contabo1.bypass.id
+  port: 443
+  password: ****
+  udp: true
+  sni: 
+  skip-cert-verify: true
+  interface-name: usb0
+proxy-groups:
+- name: LB
+  type: load-balance
+  strategy: consistent-hashing
+  disable-udp: true
+  proxies:
+  - wwan0
+  - usb0
+  url: http://www.gstatic.com/generate_204
+  interval: '300'
+dns:
+  nameserver:
+  - 192.168.8.1
+  - 192.168.96.74
+  - dhcp://"wwan0"
+  - dhcp://"usb0"
+  - 8.8.8.8
+  - 8.8.4.4
+  - https://dns.adguard.com/dns-query
+  - https://dns.google/dns-query
+  - tls://dns.adguard.com
+  - tls://dns.google
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  default-nameserver:
+  - 192.168.8.1
+  - 192.168.96.74
+  - 8.8.8.8
+  - 8.8.4.4
+redir-port: 7892
+tproxy-port: 7895
+port: 7890
+socks-port: 7891
+mixed-port: 7893
+mode: global
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: 123
+bind-address: "*"
+external-ui: "/usr/share/openclash/dashboard"
+ipv6: false
+
