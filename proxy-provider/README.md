@@ -1,6 +1,7 @@
 # NOTE : !! CONTOH FORMAT AKUN ADA DI FOLDER PROXY-PROVIDER !!
 
 ****************************************************************************************************************************************************
+# Untuk cara masukin akun cukup edit file eth1.yam atau usb0.yaml yang ada di proxy_provider dan perhatikan format akunnya
 
 # Sebagai catatan harap perhatikan nama interface di PW63.yaml
 
