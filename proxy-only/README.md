@@ -2,6 +2,8 @@
 
 ****************************************************************************************************************************************************
 
+# Untuk cara masukin akun cukup masuk Server & group => pilih proxie => lalu add. gak harus mikirin format akun cuman kekurangannya setiap tambah akun harus enable ulang openclashnya biar akun yang ditambahkan muncul di panel yacd
+
 # Sebagai catatan harap perhatikan nama interface di PW63.yaml
 
 # eth1 = modem e5577 yang saya pake
