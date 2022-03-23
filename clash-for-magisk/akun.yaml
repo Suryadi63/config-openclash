@@ -1,0 +1,17 @@
+proxies:
+  - name: "HE"
+    server: sg1-trojan.bonds.id
+    port: 443
+    type: trojan
+    password: 164093b0-a770-11ec-a8a8-1239d0255272
+    skip-cert-verify: true
+    sni: bug.com
+    udp: true
+  - name: "Biznet"
+    server: id5-trojan.bonds.id
+    port: 443
+    type: trojan
+    password: 7f6769a0-a831-11ec-a6c8-1239d0255272
+    skip-cert-verify: true
+    sni: bug.com
+    udp: true
